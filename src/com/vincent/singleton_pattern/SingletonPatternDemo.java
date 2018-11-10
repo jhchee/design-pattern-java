@@ -1,4 +1,4 @@
-package com.vincent.singleton;
+package com.vincent.singleton_pattern;
 
 public class SingletonPatternDemo {
     public static void main(String[] args) {
