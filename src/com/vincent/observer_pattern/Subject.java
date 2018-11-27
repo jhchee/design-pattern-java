@@ -25,6 +25,8 @@ public class Subject {
     }
 
     public void attach(Observer observer) {
+        // attach an observer to Subject
+        //
         // attaching in this context basically add
         // add observer instance to subject
         observers.add(observer);
@@ -33,6 +35,7 @@ public class Subject {
     public void notifyAllObservers() {
         // list of observers since there's octal, hexa and binary observer
         // call all for notifying update
+        // if subject is updated, inform all observer attached to perform update
         for (Observer observer : observers) {
             observer.update();
         }
