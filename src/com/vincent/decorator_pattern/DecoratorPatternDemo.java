@@ -5,6 +5,8 @@ public class DecoratorPatternDemo {
 
         Shape circle = new Circle();
 
+        // decorating normal circle
+        // decorating: consume in normal circle, override and add more methods
         Shape redCircle = new RedShapeDecorator(new Circle());
 
         Shape redRectangle = new RedShapeDecorator(new Rectangle());
