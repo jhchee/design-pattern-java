@@ -24,16 +24,19 @@ public class BankAccount {
         private String email;
         private boolean newsletter;
 
+        // mandatory field
         public BankAccountBuilder(String name, String accountNumber) {
             this.name = name;
             this.accountNumber = accountNumber;
         }
 
+        // optional field
         public BankAccountBuilder withEmail(String email) {
             this.email = email;
             return this;
         }
 
+        // optional field
         public BankAccountBuilder wantNewsletter(boolean newsletter) {
             this.newsletter = newsletter;
             return this;
