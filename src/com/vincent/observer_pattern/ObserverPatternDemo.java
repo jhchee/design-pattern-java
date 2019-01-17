@@ -12,7 +12,7 @@ public class ObserverPatternDemo {
         // instantiate observer
         // and attach each observer to subject
         // there's no need of assignment as the instance will not be used
-        // just binding
+        // just binding, more like a subscription
         new HexaObserver(subject);
         new OctalObserver(subject);
         new BinaryObserver(subject);

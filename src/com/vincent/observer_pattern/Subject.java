@@ -29,6 +29,7 @@ public class Subject {
         //
         // attaching in this context basically add
         // add observer instance to subject
+        // multiple observers attached describe the relationship
         observers.add(observer);
     }
 
