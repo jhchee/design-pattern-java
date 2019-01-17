@@ -1,15 +1,18 @@
-**Preface**
-1)  Adapter pattern works as a bridge between two incompatible interfaces. 
-    This type of design pattern comes under structural pattern as this pattern combines the capability of two independent interfaces.
+- Works as a bridge between two incompatible interfaces
+- By what incompatible means is that **different methods** exuding different behaviours
+- Involves a single class which is responsible to joining functionalities of independent or incompatible interfaces
+- OR intepret in this way: Converting the interface of one class into an interface expected by the clients
+- Due to this, the general purpose media player which is nearer to client will contain the another by using the adapter
 
-2)  This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces. 
-    A real life example could be a case of card reader which acts as an adapter between memory card and a laptop. 
-    You plugin the memory card into card reader and card reader into the laptop so that memory card can be read via laptop.
+- Class adapter: Relies on multiple inheritance
+- Object adapter: Relies on object composition (which will be demonstrated)
 
-![alt text](https://www.tutorialspoint.com/design_pattern/images/adapter_pattern_uml_diagram.jpg)
-**Implementation**
-1)  MediaPlayer interface, concrete class AudioPlayer implementing the interface, AudioPlayer play mp3 by default.
-2)  Having another interface AdvancedMediaPlayer and concrete classes implementing AdvancedMediaPlayer interface. These classes can play vlc and mp4 format files.
-3)  We want to make AudioPlayer to play other formats as well. 
-    To attain this, we have created an adapter class MediaAdapter which implements the MediaPlayer interface and uses AdvancedMediaPlayer objects to play the required format.
-4)  AudioPlayer uses the adapter class MediaAdapter passing it the desired audio type without knowing the actual class which can play the desired format.
+- "AdvancedMediaPlayer" will contains different methods signature in which what the concrete classes differs from each other
+- E.g. "AdvancedMediaPlayer" will have two different methods which is playMP4 and playVLC but one of this will be implemeted
+
+- Introduce "MediaAdapter" (connector class), this interface **implements** "MediaPlayer" and **uses** "AdvancedMediaPlayer" (via composition)
+
+- "MediaAdapter" will extend functionality (instantiate concrete class that implementing "AdvancedMediaPlayer") and "MediaAdapter" will later be used by "AudioPlayer", a general purpose audio player
+
+- Lastly, the demo will contain this general purpose audio player, but it is no longer the player that only plays mp3 format instead it will be able to play multiple format (by passing in different paramater)
+
